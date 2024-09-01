@@ -1,9 +1,11 @@
 import pocketmon.Battle;
 import pocketmon.PocketMon;
+import pocketmon.console.MemberShipConsolePrint;
+import pocketmon.console.NormalConsolePrint;
 
 public class Main {
     public static void main(String[] args) {
-        Battle battle = new Battle();
+        Battle battle = new Battle(new MemberShipConsolePrint());
 
         PocketMon 피카츄 = new PocketMon("피카츄", "electric", 10, 100);
         int 피카츄_공격 = battle.attack(피카츄);

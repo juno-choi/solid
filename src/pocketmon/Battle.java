@@ -4,18 +4,25 @@ import pocketmon.battle_strategy.BattleStrategy;
 import pocketmon.battle_strategy.ElectronicBattleStrategy;
 import pocketmon.battle_strategy.FireBattleStrategy;
 import pocketmon.battle_strategy.LegendBattleStrategy;
+import pocketmon.console.ConsolePrint;
 
 public class Battle {
+    private ConsolePrint consolePrint;
+
+    public Battle(ConsolePrint consolePrint) {
+        this.consolePrint = consolePrint;
+    }
+
     public int attack(PocketMon pocketMon) {
         int damage = 0;
 
         damage = getDamage(pocketMon);
 
-        System.out.println("%s(이/가) %d의 데미지를 주었습니다.".formatted(pocketMon.getName(), damage));
+        consolePrint.attackPrint(pocketMon.getName(), damage);
         return damage;
     }
 
-    private static int getDamage(PocketMon pocketMon) {
+    private int getDamage(PocketMon pocketMon) {
         BattleStrategy battleStrategy = null;
         if ("fire".equals(pocketMon.getType())) {
             battleStrategy = new FireBattleStrategy();
