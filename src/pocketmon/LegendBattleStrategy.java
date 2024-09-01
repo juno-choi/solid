@@ -1,6 +1,6 @@
 package pocketmon;
 
-public class ElectronicBattleStrategy implements BattleStrategy{
+public class LegendBattleStrategy implements BattleStrategy {
     @Override
     public int attack(PocketMon pocketMon) {
         return pocketMon.getPower();
@@ -8,6 +8,6 @@ public class ElectronicBattleStrategy implements BattleStrategy{
 
     @Override
     public void legendAppear() {
-        return ;
+        System.out.println("!!!!!레전드 포켓몬 등장!!!!!");
     }
 }

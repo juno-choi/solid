@@ -7,4 +7,9 @@ public class FireBattleStrategy implements BattleStrategy{
         int damage = (int) ((pocketMon.getPower() - 11) * 1.2);
         return damage < 0 ? 1 : damage;
     }
+
+    @Override
+    public void legendAppear() {
+        return ;
+    }
 }

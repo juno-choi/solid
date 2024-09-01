@@ -16,6 +16,9 @@ public class Battle {
             battleStrategy = new FireBattleStrategy();
         } else if ("electric".equals(pocketMon.getType())) {
             battleStrategy = new ElectronicBattleStrategy();
+        } else if ("legend".equals(pocketMon.getType())) {
+            battleStrategy = new LegendBattleStrategy();
+            battleStrategy.legendAppear();
         }
 
         if (battleStrategy == null) {

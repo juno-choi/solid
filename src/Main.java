@@ -10,5 +10,8 @@ public class Main {
 
         PocketMon 파이리 = new PocketMon("파이리", "fire", 10, 100);
         int 파이리_공격 = battle.attack(파이리);
+
+        PocketMon 뮤츠 = new PocketMon("뮤츠", "legend", 20, 120);
+        int 뮤츠_공격 = battle.attack(뮤츠);
     }
 }
