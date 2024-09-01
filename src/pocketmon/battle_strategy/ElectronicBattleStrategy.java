@@ -1,4 +1,6 @@
-package pocketmon;
+package pocketmon.battle_strategy;
+
+import pocketmon.PocketMon;
 
 public class ElectronicBattleStrategy implements BattleStrategy{
     @Override

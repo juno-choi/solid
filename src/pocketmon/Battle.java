@@ -1,5 +1,10 @@
 package pocketmon;
 
+import pocketmon.battle_strategy.BattleStrategy;
+import pocketmon.battle_strategy.ElectronicBattleStrategy;
+import pocketmon.battle_strategy.FireBattleStrategy;
+import pocketmon.battle_strategy.LegendBattleStrategy;
+
 public class Battle {
     public int attack(PocketMon pocketMon) {
         int damage = 0;
