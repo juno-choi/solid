@@ -11,9 +11,17 @@ public class Battle {
     }
 
     private static int getDamage(PocketMon pocketMon) {
+        BattleStrategy battleStrategy = null;
         if ("fire".equals(pocketMon.getType())) {
-            return (int) (pocketMon.getPower() * 1.2);
+            battleStrategy = new FireBattleStrategy();
+        } else if ("electric".equals(pocketMon.getType())) {
+            battleStrategy = new ElectronicBattleStrategy();
         }
-        return pocketMon.getPower();
+
+        if (battleStrategy == null) {
+            throw new IllegalArgumentException("Unknown type: " + pocketMon.getType());
+        }
+
+        return battleStrategy.attack(pocketMon);
     }
 }
