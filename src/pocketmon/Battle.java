@@ -22,6 +22,13 @@ public class Battle {
             throw new IllegalArgumentException("Unknown type: " + pocketMon.getType());
         }
 
+        if (battleStrategy instanceof FireBattleStrategy) {
+            if (pocketMon.getPower() < 11) {
+                return 1;
+            }
+
+        }
+
         return battleStrategy.attack(pocketMon);
     }
 }
