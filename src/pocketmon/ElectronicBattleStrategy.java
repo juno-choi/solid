@@ -6,8 +6,4 @@ public class ElectronicBattleStrategy implements BattleStrategy{
         return pocketMon.getPower();
     }
 
-    @Override
-    public void legendAppear() {
-        return ;
-    }
 }

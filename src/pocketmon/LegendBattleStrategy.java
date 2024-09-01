@@ -1,6 +1,6 @@
 package pocketmon;
 
-public class LegendBattleStrategy implements BattleStrategy {
+public class LegendBattleStrategy implements BattleStrategy, BattleStrategyForLegend {
     @Override
     public int attack(PocketMon pocketMon) {
         return pocketMon.getPower();

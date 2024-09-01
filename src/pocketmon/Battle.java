@@ -17,8 +17,9 @@ public class Battle {
         } else if ("electric".equals(pocketMon.getType())) {
             battleStrategy = new ElectronicBattleStrategy();
         } else if ("legend".equals(pocketMon.getType())) {
-            battleStrategy = new LegendBattleStrategy();
-            battleStrategy.legendAppear();
+            LegendBattleStrategy legendBattleStrategy = new LegendBattleStrategy();
+            legendBattleStrategy.legendAppear();
+            battleStrategy = legendBattleStrategy;
         }
 
         if (battleStrategy == null) {

@@ -8,8 +8,4 @@ public class FireBattleStrategy implements BattleStrategy{
         return damage < 0 ? 1 : damage;
     }
 
-    @Override
-    public void legendAppear() {
-        return ;
-    }
 }
