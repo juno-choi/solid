@@ -22,22 +22,8 @@ public class Battle {
         return damage;
     }
 
-    private int getDamage(PocketMon pocketMon) {
-        BattleStrategy battleStrategy = null;
-        if ("fire".equals(pocketMon.getType())) {
-            battleStrategy = new FireBattleStrategy();
-        } else if ("electric".equals(pocketMon.getType())) {
-            battleStrategy = new ElectronicBattleStrategy();
-        } else if ("legend".equals(pocketMon.getType())) {
-            LegendBattleStrategy legendBattleStrategy = new LegendBattleStrategy();
-            legendBattleStrategy.legendAppear();
-            battleStrategy = legendBattleStrategy;
-        }
-
-        if (battleStrategy == null) {
-            throw new IllegalArgumentException("Unknown type: " + pocketMon.getType());
-        }
-
+    protected int getDamage(PocketMon pocketMon) {
+        BattleStrategy battleStrategy = new ElectronicBattleStrategy();
         return battleStrategy.attack(pocketMon);
     }
 }
